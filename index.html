@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Document</title>
+    <style>
+        .center-container{
+            display: block;
+            margin-left: auto;
+            margin-right: auto; 
+            width: max-content;
+            max-width: 80vw;
+            text-align: center;
+        }
+        p{
+            font-weight: bold;
+        }
+        @keyframes color-change {
+            0% { color: red; }
+            50% { color: blue; }
+            100% { color: red; }
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <div class="center-container" id="first-slide">
+        <p>Smrithi's Reaction: </p>
+        <img onclick="replaceImg()" src="./assets/marudhamalai-vadivelu.gif" style="max-width: 100%;" alt="">
+        <p>Enna, onnuthayu kaanu...</p>
+        <p>nu nee yosikradhukulla....Image ah click panna, unnaku onnu waiting!!</p>
+    </div>
+    <div class="center-container">
+        <img src="./assets/happy.gif" onclick="getBirthday()" alt="" style="display: none;max-width: 100%;" id="happy-img">
+        <div id="happy-txt" style="display: none;">
+            <p>Verum happy mattum dhaana nu yosipa, adhaan illa!!</p>
+            <p>Konjam happiness oda happy ah click pannu!! :)</p>
+        </div>
+        <img src="./assets/birthday.gif" alt="" style="display: none;max-width: 100%;" id="bday-img" onclick="getName()">
+        <div id="bday-txt" style="display: none;">
+            <p>Ellam okayy, but bday yaaruku?? 💭🤔</p>
+            <p>Adhuku enna pannanu na, birthday va click pannanu!!</p>
+        </div>
+        <div id="text-area" style="text-align: center;">
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function replaceImg(){
+        document.getElementById("first-slide").innerHTML = "";
+        document.getElementById("happy-img").style.display = "block";
+        document.getElementById("happy-txt").style.display = "block";
+    }
+    function getBirthday(){
+        document.getElementById("happy-txt").innerHTML = "";
+        document.getElementById("bday-img").style.display = "block";
+        document.getElementById("bday-txt").style.display = "block";
+    }
+    function getName(){
+        document.getElementById("bday-txt").innerHTML = "";
+        document.getElementById("text-area").innerHTML = `<div class="w3-container w3-center w3-animate-top">
+                                                            <h5 style="font-size:90px;font-family: cursive;color: rgb(243, 22, 62);animation: color-change 1s infinite;">Smrithi</h5>
+                                                        <img src="./assets/cake.gif" style="max-width: 100%;" alt="">
+                                                        </div>`;
+        document.body.style.backgroundImage = "url('./assets/success.gif')";
+    }
+</script>
